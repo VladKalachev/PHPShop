@@ -11,7 +11,8 @@
  * @param string $actionName название функции обработки страницы
  */
 
-function loadPage($smarty, $controllerName, $actionName = 'index') {
+function loadPage($smarty, $controllerName, $actionName = 'index') 
+{
 	
 	include_once PathPrefix . $controllerName . PathPostfix;
 	
@@ -28,8 +29,7 @@ function loadPage($smarty, $controllerName, $actionName = 'index') {
  * 
  */
 
-function loadTemplate($smarty, $templateName){
-
+function loadTemplate($smarty, $templateName)
+{
 	$smarty->display($templateName . TemplatePostfix);
-
 }

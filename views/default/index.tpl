@@ -2,8 +2,9 @@
     <head>
         <title>{$pageTitle}</title>
     </head>
-    <body>
-        {$pageTitle}
-    </body>
+<body>
+{$pageTitle}
+
+</body>
     
 </html>
