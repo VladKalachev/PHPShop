@@ -8,6 +8,7 @@ include_once '../library/main_functions.php'; // Основные функции
 
 $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
 
+
 // определяем с какой функцие будем работать
 
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
