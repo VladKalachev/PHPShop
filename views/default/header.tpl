@@ -13,4 +13,3 @@
 
 <div id="centerColumn">
     
-centerColumn

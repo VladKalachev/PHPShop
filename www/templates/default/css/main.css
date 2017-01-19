@@ -21,14 +21,16 @@ body {
 	padding-bottom: 20px;
 }
 
-#conterColumn {
+#centerColumn {
 	width: 600px;
 	float: left;
 	padding-left: 90px;
+	overflow: hidden;
 }
 
 #footer {
 	clear: both;
+	text-align: center;
 }
 
 .menuCaption{
