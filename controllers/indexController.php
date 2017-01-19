@@ -5,6 +5,9 @@
   * 	
   */
  
+ // подключяем модели
+ include_once '../models/CaregoriesModel.php';
+ 
 function testAction() {
 	echo 'indexController.php > testAction';
 }
@@ -15,8 +18,12 @@ function testAction() {
  * 
  */
 function indexAction($smarty){
-	$smarty->assign('pageTitle', 'Главная страница сайта');
+	$rsCategories = getAllMainCatsWithChilden();
+
 	
+	$smarty->assign('pageTitle', 'Главная страница сайта');
+	$smarty->assign('rsCategories', $rsCategories);
+
 	loadTemplate($smarty, 'header');
 	loadTemplate($smarty, 'index');
 	loadTemplate($smarty, 'footer');

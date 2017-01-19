@@ -1,6 +1,7 @@
 <?php 
 
 include_once '../config/config.php'; // Иницилизация настроек
+include_once '../config/db.php'; // Инициализация базы данных
 include_once '../library/main_functions.php'; // Основные функции
 
 //?controller=index&action=index
