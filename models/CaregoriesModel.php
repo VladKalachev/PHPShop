@@ -48,3 +48,21 @@ function getChildrenForCat($catId){
 
  	return $smartyRs;
  }
+
+/**
+ * Получить данные категории по id
+ * 
+ * @param  array массив - строка категории
+ * 
+ */
+ function getCatById($catId)
+ {
+// защита SQL инекций
+    $catId = intval($catId);
+
+    $sql = "SELECT * FROM categories WHERE id='{$catId}'";
+    
+    $rs = mysql_query($sql);
+   //d($sql);
+    return mysql_fetch_assoc($rs);
+ }
