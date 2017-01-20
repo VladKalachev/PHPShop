@@ -27,7 +27,7 @@ define ('TemplateWebPath', "/templates/{$template}/");
 // > Инифиализация шаблонизатора 
 // put full path to Smarty.class.php
 require('../library/Smarty/libs/Smarty.class.php');
-$smarty = new Smarty ();
+$smarty = new Smarty();
 
 $smarty->setTemplateDir(TemplatePrefix);
 $smarty->setCompileDir('../tmp/smarty/templates_c');

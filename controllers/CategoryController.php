@@ -25,6 +25,8 @@
  	if($catId == null) exit();
  	
  	$rsCategory = getCatById($catId);
+
  	d($rsCategory);
  	//echo "Categiry _ {$catId}";
+
  }

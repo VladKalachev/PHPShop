@@ -4,14 +4,14 @@ include_once '../config/config.php'; // Иницилизация настрое�
 include_once '../config/db.php'; // Инициализация базы данных
 include_once '../library/main_functions.php'; // Основные функции
 
-//?controller=index&action=Index
+//?controller=index&action=index
 // определяем с каким контролеером будем работать
 
 $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
 
+
 // определяем с какой функцие будем работать
 
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
-
 
 loadPage($smarty, $controllerName, $actionName);
