@@ -27,4 +27,25 @@ function getLastProducts($limit = null)
  	return createSmartyRsArray($rs);
 
 }
+
+ /**
+  * Получаем продукт для категории $itemId
+  * 
+  * @param integer $itemId ID категории
+  * @return array Массив товаров
+  */
+function getProductsByCat($itemId)
+{
+	
+	$itemId = intval($itemId);
+
+	$sql = "SELECT *
+	 		FROM `products` 
+	 		WHERE category_id = '{$itemId}'";
+  
+ 	$rs = mysql_query($sql);
+
+ 	return createSmartyRsArray($rs);
+
+}
  

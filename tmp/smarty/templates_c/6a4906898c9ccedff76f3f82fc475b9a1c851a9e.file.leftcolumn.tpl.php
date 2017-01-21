@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-20 23:21:20
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-21 18:22:19
          compiled from "../views/default/leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:156545861858828d609a9fe4-29833773%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a4906898c9ccedff76f3f82fc475b9a1c851a9e' => 
     array (
       0 => '../views/default/leftcolumn.tpl',
-      1 => 1484948366,
+      1 => 1485019336,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_58828d609e4fe9_98705738',
   'variables' => 
   array (
     'rsCategories' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'itemChild' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_58828d609e4fe9_98705738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58828d609e4fe9_98705738')) {function content_58828d609e4fe9_98705738($_smarty_tpl) {?>
     
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value){
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 ?>
-           	<a href="/www/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+           	<a href="../www/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 </a><br />
 
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['itemChild']->key => $_smarty_tpl->tpl_vars['itemChild']->value){
 $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
 ?>
-					--<a href="/www/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+					--<a href="../www/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['itemChild']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['itemChild']->value['name'];?>
 </a><br />	
 				<?php } ?>	
