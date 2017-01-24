@@ -1,5 +1,39 @@
 <?php 
+
+/**
+ * ProductComtolle.php
+ * 
+ * Контроллер страницы товара (/product/1)
+ * 
+ */
  
-function testAction() {
-	echo "indexController.php > testAction";
+ //?controller=product&id=1
+ // подключяем модели
+ include_once '../models/ProductsModel.php';
+ include_once '../models/CaregoriesModel.php';
+
+/**
+ * Формирование страницы продукта
+ * 
+ * @param  object $smarty шаблонизатор
+ */
+function indexAction($smarty) {
+
+	$itemId = isset($_GET['id']) ? $_GET['id'] : null;
+	if($itemId == null) exit();
+
+	// получить данные продукта
+	
+	$rsProduct = getProductById($itemId);
+
+	// получить все категории
+	$rsCategories = getAllMainCatsWithChilden();
+
+	$smarty->assign('pageTitle', '');
+	$smarty->assign('rsCategories', $rsCategories);
+	$smarty->assign('rsProduct', $rsProduct);
+
+	loadTemplate($smarty, 'header');
+	loadTemplate($smarty, 'product');
+	loadTemplate($smarty, 'footer');
 };
