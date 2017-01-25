@@ -29,6 +29,11 @@ function indexAction($smarty) {
 	// получить все категории
 	$rsCategories = getAllMainCatsWithChilden();
 
+	$smarty->assign('itemInCart', 0);
+	if(in_array($itemId, $_SESSION['cart'])){
+		$smarty->assign('itemInCart', 1);
+	}
+
 	$smarty->assign('pageTitle', '');
 	$smarty->assign('rsCategories', $rsCategories);
 	$smarty->assign('rsProduct', $rsProduct);

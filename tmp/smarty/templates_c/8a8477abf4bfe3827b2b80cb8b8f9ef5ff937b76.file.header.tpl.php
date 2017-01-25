@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-19 16:43:21
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-25 16:00:22
          compiled from "..\views\default\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15781587f5d40c06207-99139997%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8a8477abf4bfe3827b2b80cb8b8f9ef5ff937b76' => 
     array (
       0 => '..\\views\\default\\header.tpl',
-      1 => 1484833392,
+      1 => 1485349206,
       2 => 'file',
     ),
   ),
@@ -28,8 +28,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
-        <link rel="stylesheet" type="text/css" href="../www<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
+        <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
 css/main.css">
+		<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script src="/js/main.js" type="text/javascript"></script>
+
     </head>
 <body>
     <div id="header">
