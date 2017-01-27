@@ -39,7 +39,7 @@ function removeFromCart(itemId){
 		url: "/cart/removefromcart/" + itemId +'/',
 		dataType: 'json',
 		success: function(data){
-			console.log(data['success']);
+			
 			if(data['success']){
 				$('#cartCntItems').html(data['cntItems']);
 
@@ -51,3 +51,18 @@ function removeFromCart(itemId){
 	
 }
 
+/**
+ * Подсчет стоимости купленного товара
+ * 
+ * @param integer itemId ID продукта
+ * 
+ */
+
+function conversionPrive(itemId){
+	
+	var newCnt = $('#itemCnt_' + itemId).val();
+	var itemPrice = $('#itemPrice_' + itemId).attr('value');
+	var itemRealPrica = newCnt * itemPrice;
+
+	$('#itemRealPrice_' + itemId).html(itemRealPrica);
+}
