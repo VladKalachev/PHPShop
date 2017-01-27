@@ -46,7 +46,7 @@ function removefromcartAction(){
 
 	$resData = array();
 	$key = array_search($itemId, $_SESSION['cart']);
-	if ($key != false) {
+	if ($key !== false) {
 		unset($_SESSION['cart'][$key]);
 		$resData['success'] = 1;
 		$resData['cntItems'] = count($_SESSION['cart']);

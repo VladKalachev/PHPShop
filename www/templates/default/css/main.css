@@ -1,3 +1,7 @@
+.hidme {
+	display: none;
+}
+
 body {
 	padding: 0;
 	display: block;
