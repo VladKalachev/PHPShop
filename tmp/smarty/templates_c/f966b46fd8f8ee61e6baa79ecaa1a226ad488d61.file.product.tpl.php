@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-25 17:50:30
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-01-27 15:20:51
          compiled from "..\views\default\product.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13726588766232ae944-10118935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f966b46fd8f8ee61e6baa79ecaa1a226ad488d61' => 
     array (
       0 => '..\\views\\default\\product.tpl',
-      1 => 1485355608,
+      1 => 1485516611,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'rsProduct' => 0,
+    'itemInCart' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -34,11 +35,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 <a href="#" id="removeCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
-" onclick="removeFromCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+" <?php if (!$_smarty_tpl->tpl_vars['itemInCart']->value){?> class="hidme"<?php }?> onclick="removeFromCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
 ); return false;" alt='Удалить из корзины'>Удалить из корзины</a>
 
 <a href="#" id="addCart_<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
-" onclick="addToCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
+" <?php if ($_smarty_tpl->tpl_vars['itemInCart']->value){?> class="hidme" <?php }?> onclick="addToCart(<?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['id'];?>
 ); return false;" alt='Добавить в корзину'>Добавить в корзину</a>
 <p> Описание <br /><?php echo $_smarty_tpl->tpl_vars['rsProduct']->value['description'];?>
 </p><?php }} ?>
