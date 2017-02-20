@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="433886ad-0eeb-4b73-82fd-9c02308292c6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/UsersModel.php" afterPath="$PROJECT_DIR$/models/UsersModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/1febcd04b5db3f3dad3a541e467b066e67da6d4d.file.index.tpl.php" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/1febcd04b5db3f3dad3a541e467b066e67da6d4d.file.index.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/3dbdba5b3e744fb99042215648705161ce6110d6.file.header.tpl.php" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/3dbdba5b3e744fb99042215648705161ce6110d6.file.header.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/5d43f1667fe2086ae557e965768e27fc4dc60e1e.file.footer.tpl.php" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/5d43f1667fe2086ae557e965768e27fc4dc60e1e.file.footer.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/6a4906898c9ccedff76f3f82fc475b9a1c851a9e.file.leftcolumn.tpl.php" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/6a4906898c9ccedff76f3f82fc475b9a1c851a9e.file.leftcolumn.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/smarty/templates_c/d5078108bb7a000ac56a46acde03fbddcf31e227.file.category.tpl.php" afterPath="$PROJECT_DIR$/tmp/smarty/templates_c/d5078108bb7a000ac56a46acde03fbddcf31e227.file.category.tpl.php" />
-    </list>
+    <list default="true" id="433886ad-0eeb-4b73-82fd-9c02308292c6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -292,12 +284,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1486228365121</updated>
-      <workItem from="1486228366719" duration="4797000" />
+      <workItem from="1486228366719" duration="5207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4797000" />
+    <option name="totallyTimeSpent" value="5207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

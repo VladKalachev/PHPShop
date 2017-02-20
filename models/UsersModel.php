@@ -79,6 +79,26 @@ function checkRegisterParams($email, $pwd1, $pwd2)
         $res['message'] = 'Введите повтор пароля';
     }
 
+    if($pwd1 != $pwd2){
+        $res['success'] = false;
+        $res['message'] = 'Пароли не совпадают';
+    }
+
     return $res;
 
+}
+
+/**
+ * Проверка Email
+ */
+function checkUserEmail($email){
+
+  $email = mysql_real_escape_string($email);
+  
+  $sql = "SELECT id FROM users WHERE email = '{$email}' ";
+
+  $rs = mysql_query($sql);
+  $rs = createSmartyRsArray($rs);
+
+  return $rs;
 }

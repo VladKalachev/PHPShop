@@ -66,3 +66,42 @@ function conversionPrive(itemId){
 
 	$('#itemRealPrice_' + itemId).html(itemRealPrica);
 }
+
+/**
+ * Регистрация нового пользователя
+ * 
+ * 
+ */
+
+ function registerNewUser(){
+
+ 	var postData = getData('#regiterBox');
+
+ 	$.$.ajax({
+ 		url: '/user/register/',
+ 		type: 'POST',
+ 		async: false,
+ 		dataType: 'json',
+ 		data: postData,
+ 		success: function(data){
+ 			if(data['success']){
+ 				alert("Регистрация прошла успешна");
+
+ 				//> блок в левом стоблце
+
+ 				$('#registterBox').hide();
+ 				$('#userLink').attr('href', '/user/');
+ 				$('#userLink').show();
+
+ 				$('#loginBox').hide();
+ 				$('#btnSaveOrder').show();
+
+ 			} else{
+ 				alert(data['message']);
+ 			}
+ 		}
+ 	})
+ 	
+ 	
+
+ }

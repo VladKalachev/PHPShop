@@ -28,4 +28,31 @@ function registerAction(){
     	$resData['success'] = false;
     	$resData['message'] = "Пользователь с таким email ('{$email}') уже зарегестрирован";
     }
+
+    if(! $resData){
+
+        $pwdMD5 = md5($pwd1);
+
+        $userData = registerNewUser($email, $pwdMD5, $name, $phone, $adress);
+
+        if($userData['success']){
+            
+            $resData['messge'] = 'Пользователь успешно зарегистрирован';
+            $resData['success'] = 1;
+
+            $userData = $userData[0];
+            $resData['userName'] = $userData['name'] ? $userData['name'] : $userData['email'];
+            $resData['userName'] = $email;
+
+            $_SESSION['user'] = $userData;
+            $_SESSION['user']['displayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
+
+
+        } esle{
+            $resData['success'] = 0;
+            $resData['success'] = "Ошибка регистрации";
+        }
+
+    }
+    echo json_encode($resData);
 }
