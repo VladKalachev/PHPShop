@@ -70,31 +70,32 @@ function conversionPrive(itemId){
 /**
  * Регистрация нового пользователя
  * 
- * 
  */
 
  function registerNewUser(){
 
- 	var postData = getData('#regiterBox');
+ 	console.log(111);
 
- 	$.$.ajax({
- 		url: '/user/register/',
+ 	var postData = getData('#registerBox');
+ 	console.log(postData);
+ 	$.ajax({
  		type: 'POST',
  		async: false,
- 		dataType: 'json',
+ 		url: "/user/register/",
  		data: postData,
+ 		dataType: 'json',
  		success: function(data){
  			if(data['success']){
- 				alert("Регистрация прошла успешна");
+ 				alert('Регистрация прошла успешна');
 
  				//> блок в левом стоблце
 
- 				$('#registterBox').hide();
- 				$('#userLink').attr('href', '/user/');
+ 				$('#registerBox').hide();
+ 				/*$('#userLink').attr('href', '/user/');
  				$('#userLink').show();
 
  				$('#loginBox').hide();
- 				$('#btnSaveOrder').show();
+ 				$('#btnSaveOrder').show();*/
 
  			} else{
  				alert(data['message']);
