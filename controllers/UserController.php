@@ -51,7 +51,7 @@ function registerAction(){
             $_SESSION['user']['displayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
 
 
-        } esle{
+        } else{
             $resData['success'] = 0;
             $resData['success'] = "Ошибка регистрации";
         }

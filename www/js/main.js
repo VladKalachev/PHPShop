@@ -67,6 +67,26 @@ function conversionPrive(itemId){
 	$('#itemRealPrice_' + itemId).html(itemRealPrica);
 }
 
+
+ //Получение данных с формы (registerBox) 
+function getData(obj_form){
+
+	var hData = {}; 
+
+	$('input, textarea, select', obj_form).each(function(){ 
+
+		if(this.name && this.name!=''){ 
+
+			hData[this.name]=this.value;
+
+			//console.log('hData['+this.name+'] = '+hData[this.name]);
+
+		} 
+	});
+
+	return hData; 
+} 
+
 /**
  * Регистрация нового пользователя
  * 
@@ -74,10 +94,8 @@ function conversionPrive(itemId){
 
  function registerNewUser(){
 
- 	console.log(111);
-
  	var postData = getData('#registerBox');
- 	console.log(postData);
+ 	//console.log(postData);
  	$.ajax({
  		type: 'POST',
  		async: false,
@@ -85,6 +103,7 @@ function conversionPrive(itemId){
  		data: postData,
  		dataType: 'json',
  		success: function(data){
+ 			console.log(data['success']);
  			if(data['success']){
  				alert('Регистрация прошла успешна');
 
@@ -101,7 +120,7 @@ function conversionPrive(itemId){
  				alert(data['message']);
  			}
  		}
- 	})
+ 	});
  	
  	
 
