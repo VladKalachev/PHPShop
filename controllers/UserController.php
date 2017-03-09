@@ -27,7 +27,7 @@ function registerAction(){
     $resData = null;
     $resData = checkRegisterParams($email, $pwd1, $pwd2);
 
-    if(! $resData && checkUserEmail($mail)){
+    if(! $resData && checkUserEmail($email)){
     	$resData['success'] = false;
     	$resData['message'] = "Пользователь с таким email ('{$email}') уже зарегестрирован";
     }
@@ -40,7 +40,7 @@ function registerAction(){
 
         if($userData['success']){
             
-            $resData['messge'] = 'Пользователь успешно зарегистрирован';
+            $resData['message'] = 'Пользователь успешно зарегистрирован';
             $resData['success'] = 1;
 
             $userData = $userData[0];

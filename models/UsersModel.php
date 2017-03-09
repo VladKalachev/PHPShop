@@ -27,8 +27,8 @@ $adress = htmlspecialchars(mysql_real_escape_string($adress));
 
 	$sql = "INSERT INTO 
  	users (`email`,`pwd`,`name`,`phone`,`adress`)
- 	VALUES ('{$email}'), '{$email}', '{$name}','{$phone}','{$adress}'";
-
+ 	VALUES ('{$email}', '{$email}', '{$name}','{$phone}','{$adress}')";
+  
  	$rs = mysql_query($sql);
 
   if($rs){
@@ -64,17 +64,17 @@ function checkRegisterParams($email, $pwd1, $pwd2)
 {
     $res = null;
 
-    if (!$email){
+    if (! $email){
         $res['success'] = false;
         $res['message'] = 'Введите email';
     }
 
-    if (!$pwd1){
+    if (! $pwd1){
         $res['success'] = false;
         $res['message'] = 'Введите пароль';
     }
 
-    if (!$pwd2){
+    if (! $pwd2){
         $res['success'] = false;
         $res['message'] = 'Введите повтор пароля';
     }

@@ -78,8 +78,7 @@ function getData(obj_form){
 		if(this.name && this.name!=''){ 
 
 			hData[this.name]=this.value;
-
-			//console.log('hData['+this.name+'] = '+hData[this.name]);
+			console.log('hData['+this.name+'] = '+hData[this.name]);
 
 		} 
 	});
@@ -103,7 +102,6 @@ function getData(obj_form){
  		data: postData,
  		dataType: 'json',
  		success: function(data){
- 			console.log(data['success']);
  			if(data['success']){
  				alert('Регистрация прошла успешна');
 
