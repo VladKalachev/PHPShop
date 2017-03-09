@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-09 11:16:09
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-09 16:14:46
          compiled from "../views/default/leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:156545861858828d609a9fe4-29833773%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a4906898c9ccedff76f3f82fc475b9a1c851a9e' => 
     array (
       0 => '../views/default/leftcolumn.tpl',
-      1 => 1489054542,
+      1 => 1489072419,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'rsCategories' => 0,
     'item' => 0,
     'itemChild' => 0,
+    'arUser' => 0,
     'cartCntItems' => 0,
   ),
   'has_nocache_code' => false,
@@ -56,6 +57,15 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
            <?php } ?>
     </div>
     
+<?php if (isset($_smarty_tpl->tpl_vars['arUser']->value)){?>
+
+<div id="userBox">
+  <a href="/user/" id="uselLink"><?php echo $_smarty_tpl->tpl_vars['arUser']->value['displayName'];?>
+</a><br />
+  <a href="/user/logout/" onclick="logout();">Выход</a>
+</div>
+
+<?php }else{ ?>
 
 <div id="userBox" class="hideme">
 
@@ -71,19 +81,19 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
   <input type="button" onclick="login();" value="Войти">
 </div>
 
-    <div id="registerBox">
-      <div class="menuCaption showHidden" onclick="showRegisterBox();">Регистрация</div>
-      <div id="registerBoxHidden">
-        email:<br />
-        <input type="text" id="email" name="email" value="" /><br />
-        пароль:<br />
-        <input type="password" id="pwd1" name="pwd1" value="" /><br />
-        повторить пароль:<br />
-        <input type="password" id="pwd2" name="pwd2" value="" /><br />
-        <input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
-      </div>
-    </div>
-
+<div id="registerBox">
+  <div class="menuCaption showHidden" onclick="showRegisterBox();">Регистрация</div>
+  <div id="registerBoxHidden">
+    email:<br />
+    <input type="text" id="email" name="email" value="" /><br />
+    пароль:<br />
+    <input type="password" id="pwd1" name="pwd1" value="" /><br />
+    повторить пароль:<br />
+    <input type="password" id="pwd2" name="pwd2" value="" /><br />
+    <input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
+  </div>
+</div>
+<?php }?>
 
 
     <div class="menuCaption">Карзина</div>
