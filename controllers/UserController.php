@@ -42,7 +42,7 @@ function registerAction(){
         if ($userData['success']){ 
             
             $resData['message'] = 'Пользователь успешно зарегистрирован'; 
-            $resData['success']=1; 
+            $resData['success'] = 1; 
 
             $userData = $userData[0]; 
             $resData['userName'] = $userData['name'] ? $userData['name']:$userData['email']; 
@@ -60,3 +60,55 @@ function registerAction(){
     }
     echo json_encode($resData);
 }
+
+
+/**
+ * Разлогиневаник пользователя
+ */
+
+function logoutAction()
+{
+    if(isset($_SESSION['user'])){
+        unset($_SESSION['user']);
+        unset($_SESSION['cart']);
+    }
+
+    redirect('/');
+}
+
+/**
+ *  AJAX авторизация пользователя
+ */
+
+function loginAction()
+{
+    $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : null;
+    $email = trim($email);
+
+    $pwd = isset($_REQUEST['pwd']) ? $_REQUEST['pwd'] : null;
+    $pwd = trim($pwd);
+
+    $userData = loginUser($email, $pwd);
+
+    if($userData['success']){
+        $userData = $userData[0];
+
+        $_SESSION['user'] = $userData;
+        $_SESSION['user']['displayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
+
+        $resData = $_SESSION['user'];
+        $resData['success'] = 1;
+
+    }else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Неверный логин или пароль';
+    }
+
+    echo json_encode($resData);
+}
+
+
+
+
+
+

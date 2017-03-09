@@ -127,3 +127,17 @@ function getData(obj_form){
  	
 
  }
+
+
+function logout() {
+    console.log('Logout');
+    $.ajax({
+        type: 'POST',
+        url: '/user/logout/',
+        success: function() {
+            console.log('user logged out');
+            $('#registerBox').show();
+            $('#userBox').hide();
+        }
+    });
+}
