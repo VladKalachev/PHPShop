@@ -106,13 +106,17 @@ function getData(obj_form){
  				alert('Регистрация прошла успешна');
 
  				//> блок в левом стоблце
-
+ 				console.log(data['userName']);
  				$('#registerBox').hide();
- 				/*$('#userLink').attr('href', '/user/');
- 				$('#userLink').show();
 
- 				$('#loginBox').hide();
- 				$('#btnSaveOrder').show();*/
+ 				$('#userLink').attr('href', '/user/');
+ 				$('#userLink').html(data['userName']);
+				$('#userBox').show();
+
+ 				// $('#userLink').show();
+
+ 				// $('#loginBox').hide();
+ 				// $('#btnSaveOrder').show();
 
  			} else{
  				alert(data['message']);

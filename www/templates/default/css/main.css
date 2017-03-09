@@ -11,6 +11,10 @@ body {
 	display: none;
 }
 
+#userBox.hideme{
+	display: none;
+}
+
 #header {
 	height: 70px;
 	text-align: center;
