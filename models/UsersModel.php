@@ -129,7 +129,7 @@ function loginUser($email, $pwd){
  */
 function updateUserData($name, $phone, $adress, $pwd1, $pwd2, $curPwd){
 
- $email = htmlspecialchars(mysql_real_escape_string($_SESSION['name']['email'])); 
+ $email = htmlspecialchars(mysql_real_escape_string($_SESSION['user']['email'])); 
  $name = htmlspecialchars(mysql_real_escape_string($name)); 
  $phone = htmlspecialchars(mysql_real_escape_string($phone)); 
  $adress = htmlspecialchars(mysql_real_escape_string($adress)); 
@@ -138,24 +138,25 @@ function updateUserData($name, $phone, $adress, $pwd1, $pwd2, $curPwd){
  $pwd2 = trim($pwd2);
 
  $newPwd = null;
- if($pwd && ($pwd1 == $pwd2)){
-
+ if($pwd1 && ($pwd1 == $pwd2)){
   $newPwd = md5($pwd1);
-
  }
   
-  $sql = "UPDATE users SET"; 
+  $sql = "UPDATE users 
+  SET "; 
 
   if ($newPwd){
     $sql .= "`pwd` = '{$newPwd}', "; 
   }
 
-  $sql .= "`name` = {$name}, 
-  `phone` = {$phone},
-  `adress` = {$adress}
+  $sql .= "`name` = '{$name}', 
+  `phone` = '{$phone}',
+  `adress` = '{$adress}'
   WHERE
   `email` = '{$email}' AND `pwd` = '{$curPwd}'
   LIMIT 1";
+
+  
 
   $rs = mysql_query($sql);
 
