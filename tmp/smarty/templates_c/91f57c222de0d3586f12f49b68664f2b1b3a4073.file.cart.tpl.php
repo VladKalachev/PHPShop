@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-02-04 18:07:28
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-11 11:08:35
          compiled from "../views/default/cart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7172371058960a50652fd2-20997794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '91f57c222de0d3586f12f49b68664f2b1b3a4073' => 
     array (
       0 => '../views/default/cart.tpl',
-      1 => 1486226546,
+      1 => 1489226912,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_58960a508c1554_11436871',
   'variables' => 
   array (
     'rsProducts' => 0,
     'item' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_58960a508c1554_11436871',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58960a508c1554_11436871')) {function content_58960a508c1554_11436871($_smarty_tpl) {?>
 
@@ -31,7 +31,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if (!$_smarty_tpl->tpl_vars['rsProducts']->value){?>
 	В корзине пусто.
 
-	<?php }else{ ?>
+<?php }else{ ?>
+	<form action="/cart/order/" method="POST">
 	<h2>Данные заказа</h2>
 	<table>
 		<tr>
@@ -105,6 +106,8 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 		</tr>
 		<?php } ?>
 	</table>
+		<input type="submit" value="Оформить заказ" />
+	</form>
 
 <?php }?>
 <?php }} ?>

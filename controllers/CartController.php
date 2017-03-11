@@ -83,6 +83,7 @@ function indexAction($smarty){
  */
 
 function orderAction($smarty){
+
 	// получить массив индификаторов (ID) продуктов карзины
 	$itemsIds = isset($_SESSION['cart']) ? $_SESSION['cart'] : null;
 
@@ -95,15 +96,15 @@ function orderAction($smarty){
 	//получаем из массива $_POST количество покупаемых товаро
 	$itemsCnt = array();
 	foreach ($itemsIds as $item) {
-	 	$postVar = 'itemCnt_' + .$item;
+	 	$postVar = 'itemCnt_' . $item;
 	 	$itemsCnt[$item] = isset($_POST[$postVar]) ? $_POST[$postVar] : null;
-	 } 
+	} 
 
 	//получаем список продуктов по массиву корзины
 	 $rsProducts = getProductsFromArray($itemsIds);
 	 // добовляем каждому продукту дополнительное поле
 	 $i = 0;
-	 foreach ($rsProducts as $item) {
+	 foreach ($rsProducts as &$item) {
 	 	$item['cnt'] = isset($itemsCnt[$item['id']]) ? $itemsCnt[$item['id']] : 0;
 	 	if($item['cnt']){
 	 		$item['realPrice'] = $item['cnt'] * $item['price'];

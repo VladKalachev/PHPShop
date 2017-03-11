@@ -84,6 +84,25 @@
 			</tr>
 		</table>
 	</div>	
+
+
+	<div id="registerBox">или <br />
+		<div class="menuCaprion">Регистрация нового пользователя:</div>
+		email* :<br/>
+		<input type="text" id="email" name="email" value="" /><br/>
+		пароль* :<br/>
+		<input type="password" id="pwd1" name="pwd1" value="" /><br/>
+		повторить пароль* :<br/>
+		<input type="password" id="pwd2" name="pwd2" value="" /><br/>
+
+		Имя* :<input type="text" id="name" name="name" value="" /><br/>
+		Тел* :<input type="text" id="phone" name="phone" value="" /><br/>
+		Адрес* :<textarea name="adress" id="adress"></textarea><br/>
+
+		<input type="button" onclick="registerNewUser();" value="Зарегистрироваться">
+	</div>
+	{$buttonClass = "class='hideme'"}
 {/if}
 
+	<input {$buttonClass} type="button" id="btnSaveOrder" value="Оформить заказ" onclick="saveOrder();">
 </form>
