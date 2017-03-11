@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-09 16:14:46
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-11 11:49:34
          compiled from "../views/default/leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:156545861858828d609a9fe4-29833773%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a4906898c9ccedff76f3f82fc475b9a1c851a9e' => 
     array (
       0 => '../views/default/leftcolumn.tpl',
-      1 => 1489072419,
+      1 => 1489229370,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'item' => 0,
     'itemChild' => 0,
     'arUser' => 0,
+    'hideLoginBox' => 0,
     'cartCntItems' => 0,
   ),
   'has_nocache_code' => false,
@@ -74,6 +75,10 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
   
 </div>
 
+
+<?php if (!isset($_smarty_tpl->tpl_vars['hideLoginBox']->value)){?>
+  
+
 <div id="loginBox">
   <div class="menuCaption">Авторизация</div>
   <input type="text" id="loginEmail" name="loginEmail" value="" /><br />
@@ -93,6 +98,8 @@ $_smarty_tpl->tpl_vars['itemChild']->_loop = true;
     <input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
   </div>
 </div>
+<?php }?>
+
 <?php }?>
 
 
