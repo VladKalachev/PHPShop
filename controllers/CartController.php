@@ -76,3 +76,63 @@ function indexAction($smarty){
 	loadTemplate($smarty, 'cart');
 	loadTemplate($smarty, 'footer');
 }
+
+/**
+ * Формирование страницы заказа
+ * 
+ */
+
+function orderAction($smarty){
+	// получить массив индификаторов (ID) продуктов карзины
+	$itemsIds = isset($_SESSION['cart']) ? $_SESSION['cart'] : null;
+
+	// если корзина пуста то редирект в корзину
+	if (! $itemsIds){
+		redirect('/cart/');
+		return;
+	}
+
+	//получаем из массива $_POST количество покупаемых товаро
+	$itemsCnt = array();
+	foreach ($itemsIds as $item) {
+	 	$postVar = 'itemCnt_' + .$item;
+	 	$itemsCnt[$item] = isset($_POST[$postVar]) ? $_POST[$postVar] : null;
+	 } 
+
+	//получаем список продуктов по массиву корзины
+	 $rsProducts = getProductsFromArray($itemsIds);
+	 // добовляем каждому продукту дополнительное поле
+	 $i = 0;
+	 foreach ($rsProducts as $item) {
+	 	$item['cnt'] = isset($itemsCnt[$item['id']]) ? $itemsCnt[$item['id']] : 0;
+	 	if($item['cnt']){
+	 		$item['realPrice'] = $item['cnt'] * $item['price'];
+	 	}else {
+	 		unset($rsProducts[$i]);
+	 	}
+	 	$i ++;
+	 }
+
+	 if(! $rsProducts){
+	 	echo "Корзана пуста";
+	 	return;
+	 }
+
+	 //получаемый массив покупаемых товаров помещяем в сессионную переменную
+	 $_SESSION['saleCart'] = $rsProducts;
+
+	 $rsCategories = getAllMainCatsWithChilden();
+
+	 if(! isset($_SESSION['user'])){
+	 	$smarty->assign('hideLoginBox', 1);
+	 }
+
+	$smarty->assign('pageTitle', 'Заказ');
+	$smarty->assign('rsCategories', $rsCategories);
+	$smarty->assign('rsProducts', $rsProducts);
+
+	loadTemplate($smarty, 'header');
+	loadTemplate($smarty, 'order');
+	loadTemplate($smarty, 'footer');
+
+}
