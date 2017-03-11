@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-11 11:11:48
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-11 11:22:37
          compiled from "../views/default/order.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2965842058c3cca575aab3-99169903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4daebe371c077baf8c6770fa0e382cd744ad213d' => 
     array (
       0 => '../views/default/order.tpl',
-      1 => 1489227048,
+      1 => 1489227749,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'rsProducts' => 0,
     'item' => 0,
-    'aUser' => 0,
-    'buttonClass' => 0,
     'arUser' => 0,
+    'buttonClass' => 0,
     'name' => 0,
     'phone' => 0,
     'adress' => 0,
@@ -93,7 +92,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 	<?php } ?>
 </table>
 
-<?php if (isset($_smarty_tpl->tpl_vars['aUser']->value)){?>
+<?php if (isset($_smarty_tpl->tpl_vars['arUser']->value)){?>
 	<?php $_smarty_tpl->tpl_vars['buttonClass'] = new Smarty_variable('', null, 0);?>
 	<h2>Данные заказчика</h2>
 	<div id="orderUserInfoBox" <?php echo $_smarty_tpl->tpl_vars['buttonClass']->value;?>

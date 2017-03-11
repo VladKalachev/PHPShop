@@ -40,7 +40,7 @@
 	{/foreach}
 </table>
 
-{if isset($aUser)}
+{if isset($arUser)}
 	{$buttonClass = ""}
 	<h2>Данные заказчика</h2>
 	<div id="orderUserInfoBox" {$buttonClass}>
