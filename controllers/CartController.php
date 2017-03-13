@@ -8,6 +8,8 @@
  // подключяем модели
  include_once '../models/CaregoriesModel.php';
  include_once '../models/ProductsModel.php';
+ include_once '../models/OrdersModel.php';
+ include_once '../models/PurchasModel.php';
 
  /**
   * Добавление продукта в корзину
@@ -136,4 +138,25 @@ function orderAction($smarty){
 	loadTemplate($smarty, 'order');
 	loadTemplate($smarty, 'footer');
 
+}
+
+/**
+ * AJAX функция сохранения заказа 
+ */
+function saveorderAction(){
+	
+	// получаем массив покупаемых товаров
+	$cart = isset($_SESSION['saleCart']) ? $_SESSION['saleCart'] : null;
+
+	
+	if (! $cart){
+		$resData['success'] = 0;
+		$resData['message'] = 'Нет товаро для заказа';
+		echo json_encode($resData);
+		return;
+	}
+
+	$name = $_POST['name'];
+	$phone = $_POST['phone'];
+	$adress = $_POST['adress'];
 }

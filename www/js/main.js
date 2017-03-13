@@ -243,3 +243,33 @@ function showRegisterBox(){
 
  }
 
+
+/**
+ * Сохранение заказа
+ * 
+ */
+
+ function saveOrder(){
+
+ 	var postData = getData('form');
+ 	$.ajax({
+        type: 'POST',
+        async: false,        
+        url: '/cart/saveorder/',
+        data: postData,
+        dataType: 'json',
+        success: function(data) {
+            if (data['success']){
+				alert(data['success']);
+            	documen.location = '/';
+            	
+
+            } else {
+            	alert(data['message']);
+            }
+        }
+    });
+
+ }
+
+
