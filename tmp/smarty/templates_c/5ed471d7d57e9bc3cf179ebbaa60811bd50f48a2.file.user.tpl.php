@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-10 18:44:02
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-13 13:59:41
          compiled from "../views/default/user.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:59437726258c2e5e27c1480-01753870%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5ed471d7d57e9bc3cf179ebbaa60811bd50f48a2' => 
     array (
       0 => '../views/default/user.tpl',
-      1 => 1489167710,
+      1 => 1489409890,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_58c2e5e29c44b7_49520326',
   'variables' => 
   array (
     'arUser' => 0,
+    'rsUserOrders' => 0,
+    'item' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_58c2e5e29c44b7_49520326',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58c2e5e29c44b7_49520326')) {function content_58c2e5e29c44b7_49520326($_smarty_tpl) {?>
 
@@ -65,4 +67,51 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <td><input type="button" value="Сохранить изменения" onclick="updateUserData();" /></td>
   </tr>
   
-</table><?php }} ?>
+</table>
+
+
+<h2>Заказы:</h2>
+<?php if (!$_smarty_tpl->tpl_vars['rsUserOrders']->value){?>
+  Нет заказов
+<?php }else{ ?>
+
+  <table border="1" cellpadding="1" cellspacing="1">
+
+      <tr>
+        <th>№</th>
+        <th>Действие</th>
+        <th>ID заказа</th>
+        <th>Статус</th>
+        <th>Дата создания</th>
+        <th>Дата оплаты</th>
+        <th>Дополнительная информация</th>
+      </tr>
+
+      <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['rsUserOrders']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['orders']['iteration']=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value){
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['orders']['iteration']++;
+?>
+        <tr>
+          <td><?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['orders']['iteration'];?>
+</td>
+          <td><a href="#" onclick="showProducts('<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+'); return false;">Показать товары заказа</a></td>
+          <td><?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['item']->value['status'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['item']->value['date_created'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['item']->value['date_payment'];?>
+&nbsp;</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['item']->value['comment'];?>
+</td>
+        </tr>
+      <?php } ?>
+    
+  </table>
+    
+<?php }?><?php }} ?>

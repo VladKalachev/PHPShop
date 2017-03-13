@@ -37,3 +37,37 @@
   </tr>
   
 </table>
+
+
+<h2>Заказы:</h2>
+{if ! $rsUserOrders}
+  Нет заказов
+{else}
+
+  <table border="1" cellpadding="1" cellspacing="1">
+
+      <tr>
+        <th>№</th>
+        <th>Действие</th>
+        <th>ID заказа</th>
+        <th>Статус</th>
+        <th>Дата создания</th>
+        <th>Дата оплаты</th>
+        <th>Дополнительная информация</th>
+      </tr>
+
+      {foreach $rsUserOrders as $item name=orders}
+        <tr>
+          <td>{$smarty.foreach.orders.iteration}</td>
+          <td><a href="#" onclick="showProducts('{$item['id']}'); return false;">Показать товары заказа</a></td>
+          <td>{$item['id']}</td>
+          <td>{$item['status']}</td>
+          <td>{$item['date_created']}</td>
+          <td>{$item['date_payment']}&nbsp;</td>
+          <td>{$item['comment']}</td>
+        </tr>
+      {/foreach}
+    
+  </table>
+    
+{/if}

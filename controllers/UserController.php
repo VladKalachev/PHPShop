@@ -11,6 +11,8 @@
 
 include_once "../models/CaregoriesModel.php";
 include_once "../models/UsersModel.php";
+include_once "../models/OrdersModel.php";
+include_once "../models/PurchasModel.php";
 
 function registerAction(){
 
@@ -121,8 +123,12 @@ function indexAction($smarty){
     // получить список категорий для меню
     $rsCategories = getAllMainCatsWithChilden();
 
+    // получения списка товаров пользователя
+    $rsUserOrders = getCurUserOrders();
+
     $smarty->assign('pageTitle','Страница пользователя');
     $smarty->assign('rsCategories', $rsCategories);
+    $smarty->assign('rsUserOrders', $rsUserOrders);
 
     loadTemplate($smarty, 'header');
     loadTemplate($smarty, 'user');
