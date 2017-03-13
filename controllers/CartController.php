@@ -159,4 +159,9 @@ function saveorderAction(){
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
 	$adress = $_POST['adress'];
+
+	//создаем новый заказ и получаем его
+	$orderId = makeNewOrder($name, $phone, $adress);
+	
+
 }
