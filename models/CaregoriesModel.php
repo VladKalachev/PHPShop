@@ -66,3 +66,22 @@ function getChildrenForCat($catId){
    
     return mysql_fetch_assoc($rs);
  }
+
+/**
+ * Получить все главные категории
+ * 
+ * @param  array массив категории
+ * 
+ */
+ function getAllMainCategories()
+ {
+
+    $sql = "SELECT * 
+        FROM categorie 
+        WHERE parent_id = 0";
+    
+    $rs = mysql_query($sql);
+   
+    return createSmartyRsArray($rs);
+
+ }
