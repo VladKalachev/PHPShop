@@ -106,7 +106,7 @@ function getData(obj_form){
  				alert('Регистрация прошла успешна');
 
  				//> блок в левом стоблце
- 				console.log(data['userName']);
+ 				//console.log(data['userName']);
  				$('#registerBox').hide();
 
  				$('#userLink').attr('href', '/user/');
@@ -115,8 +115,9 @@ function getData(obj_form){
 
  				// $('#userLink').show();
 
- 				// $('#loginBox').hide();
- 				// $('#btnSaveOrder').show();
+ 				// страница регистрации
+ 				$('#loginBox').hide();
+ 				$('#btnSaveOrder').show();
 
  			} else{
  				alert(data['message']);
