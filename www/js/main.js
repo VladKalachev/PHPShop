@@ -271,4 +271,19 @@ function showRegisterBox(){
 
  }
 
+/**
+ * Показывать или принять данные о заказе
+ * 
+ */
+
+ function showProducts(id){
+ 	var objName = "#purchasesForOrderId_" + id;
+
+ 	if( $(objName).css('display') != 'table-row'){
+ 		$(objName).show();
+ 	}else {
+ 		$(objName).hide();
+ 	}
+ }
+
 
