@@ -65,6 +65,8 @@
 		</table>
 	</div>
 {else}
+
+
 	<div id="loginBox">
 		<div class="menuCaption">Авторизация</div>
 		<table>

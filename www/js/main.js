@@ -260,10 +260,8 @@ function showRegisterBox(){
         dataType: 'json',
         success: function(data) {
             if (data['success']){
-				alert(data['success']);
-            	documen.location = '/';
-            	
-
+				alert(data['message']);
+            	document.location = '/';
             } else {
             	alert(data['message']);
             }

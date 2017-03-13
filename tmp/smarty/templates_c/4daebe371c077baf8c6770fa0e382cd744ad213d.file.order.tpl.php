@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-11 11:22:37
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-13 12:14:41
          compiled from "../views/default/order.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2965842058c3cca575aab3-99169903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4daebe371c077baf8c6770fa0e382cd744ad213d' => 
     array (
       0 => '../views/default/order.tpl',
-      1 => 1489227749,
+      1 => 1489403391,
       2 => 'file',
     ),
   ),
@@ -121,6 +121,8 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 		</table>
 	</div>
 <?php }else{ ?>
+
+
 	<div id="loginBox">
 		<div class="menuCaption">Авторизация</div>
 		<table>

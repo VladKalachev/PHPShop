@@ -160,8 +160,36 @@ function saveorderAction(){
 	$phone = $_POST['phone'];
 	$adress = $_POST['adress'];
 
-	//создаем новый заказ и получаем его
+	// создаем новый заказ и получаем его
 	$orderId = makeNewOrder($name, $phone, $adress);
+
+	// если заказ не создан то выдаем ошибку и завершаем функцию
+
+	if(! $orderId){
+		$resData['success'] = 0;
+		$resData['message'] = 'Ошибка создания заказа';
+ 		echo json_encode($resData);
+		return;
+	}
+
+	// сохраняем товары для создания заказа
+
+	$res = setPurchaseForOrder($orderId, $cart);
+
 	
+
+	// если успешно, то формируем ответ, удаляем переменне корзины
+
+	if($res){
+		$resData['success'] = 1;
+		$resData['message'] = 'Заказ сохранен';
+		unset($_SESSION['success']);
+		unset($_SESSION['cart']);
+	} else {
+		$resData['success'] = 0;
+		$resData['message'] = 'Ошибка внесения данных для заказа №' . $orderId;
+	}
+
+	echo json_encode($resData);
 
 }

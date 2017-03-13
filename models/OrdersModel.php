@@ -14,6 +14,7 @@
 function makeNewOrder($name, $phone, $adress){
 
 	$userId = $_SESSION['user']['id'];
+
 	$comment = "id пользователя: {$userId} <br />
 				Имя: {$name} <br />
 				Тел: {$phone} <br />
@@ -24,11 +25,12 @@ function makeNewOrder($name, $phone, $adress){
 
 	// оформление заказа к БД
 	$sql = "INSERT INTO
-			orders(`user_id`, `date_created`, `date_payment`, `status`,
-			`comment`, `user_ip`)
-			VALUES ('{$userId}', {$dateCreated}, null, '0', '{$comment}, '{$userIp}')";
+			orders (`user_id`, `date_created`, `date_payment`, 
+			`status`, `comment`, `user_ip`)
+			VALUES ('{$userId}', '{$dateCreated}', null, 
+					'0', '{$comment}', '{$userIp}')";
 	
-
+	
 	$rs = mysql_query($sql);
 
 	// получить id созданного заказа
@@ -38,9 +40,8 @@ function makeNewOrder($name, $phone, $adress){
 		ORDER BY id DESC
 		LIMIT 1";
 
-		$rs = mysql_query($sql);
-		// преобразование результатов запроса
-		$rs = createSmartyRsArrey($rs);
+		$rs = mysql_query($sql); 
+       	$rs = createSmartyRsArray($rs); 
 
 		// возвращаем id созданного запроса
 
