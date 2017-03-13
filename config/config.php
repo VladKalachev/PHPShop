@@ -15,13 +15,16 @@ define('PathPostfix', 'Controller.php');
 
 // > Используемый шаблон
 $template = 'default';
+$templateAdmin = 'admin';
 
 // путь к файлам шаблонов (*.tpl)
 define ('TemplatePrefix', "../views/{$template}/");
+define ('TemplateAdminPrefix', "../views/{$templateAdmin}/");
 define ('TemplatePostfix', '.tpl');
 
 // путь к файлам шаблонов в вебпространстве
 define ('TemplateWebPath', "/templates/{$template}/");
+define ('TemplateAdminWebPath', "/templates/{$templateAdmin}/");
 // <php
 
 // > Инифиализация шаблонизатора 
