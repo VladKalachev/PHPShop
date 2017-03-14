@@ -75,7 +75,7 @@
  	$newName = $_POST['newName'];
 
  	$res = updateCategoryData($itemId, $parentId, $newName);
- 	
+
  	if($res){
 		$resData['success'] = 1;
  		$resData['message'] = 'Категория обновлена';
@@ -87,4 +87,44 @@
 	echo json_encode($resData);
  	return;
 
+ }
+
+ /**
+  * Страница управления товарами
+  */
+
+ function productsAction($smarty)
+ {
+ 	$rsCategories = getAllCategories();
+ 	$rsProducts = getProducts();
+
+ 	$smarty->assign('rsCategories', $rsCategories);
+ 	$smarty->assign('rsProducts', $rsProducts);
+ 	$smarty->assign('pageTitle', 'Управление сайтом');
+
+
+ 	loadTemplate($smarty, 'adminHeader');
+	loadTemplate($smarty, 'adminProducts');
+	loadTemplate($smarty, 'adminFooter');
+ }
+
+ function addproductAction()
+ {
+ 	$itemName = $_POST['itemName'];
+ 	$itemPrice = $_POST['itemPrice'];
+ 	$itemDesc = $_POST['itemDesc'];
+ 	$itemCat = $_POST['itemCatId'];
+
+ 	$res = insertProduct($itemName, $itemPrice, $itemDesc, $itemCat);
+
+ 	if($res){
+		$resData['success'] = 1;
+ 		$resData['message'] = 'Изменени успешно внесены';
+ 	}else {
+		$resData['success'] = 0;
+ 		$resData['message'] = 'Ошибка изменения данных';
+ 	}
+
+ 	echo json_encode($resData);
+ 	return;
  }

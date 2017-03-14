@@ -94,4 +94,32 @@ function getProductsFromArray($itemIds)
 
 }
 
+/**
+ * Получить продукты
+ */
+function getProducts()
+{
+  $sql = "SELECT *
+      FROM `products` 
+      ORDER BY category_id";
+
+  $rs = mysql_query($sql);
+
+  return createSmartyRsArray($rs);
+}
+
+
  
+function insertProduct($itemName, $itemPrice, $itemDesc, $itemCat)
+{
+   $sql = "INSERT INTO products
+   SET 
+    `name` = '{$itemName}',
+    `price` = '{$itemPrice}',
+    `description` = '{$itemDesc}',
+    `category_id` = '{$itemCat}'";
+
+  $rs = mysql_query($sql);
+
+  return $rs;
+}

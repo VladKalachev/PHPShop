@@ -67,3 +67,33 @@ function updateCat(itemId){
     });
 
 }
+
+
+// добавление нового продукта
+function addProduct(itemId){
+
+    var itemName = $('#newItemName').val();
+    var itemPrice = $('#newItemPrice').val();
+    var itemCatId = $('#newItemCatId').val();
+    var itemDesc = $('#newItemDesc').val();
+   
+    var postData = { itemName: itemName, itemPrice: itemPrice, itemCatId: itemCatId, itemDesc: itemDesc};
+
+    $.ajax({
+            type: 'POST',
+            async: false,        
+            url: '/admin/addproduct/',
+            data: postData,
+            dataType: 'json',
+            success: function(data) {
+                alert(data['message']);
+                if (data['success']){
+                  $('#newItemName').val('');
+                  $('#newItemPrice').val('');
+                  $('#newItemCatId').val('');
+                  $('#newItemDesc').val('');
+                }
+            }
+    });
+
+}
