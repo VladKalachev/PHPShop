@@ -124,5 +124,29 @@ function getAllCategories(){
 
 }
 
+/**
+ * Обновление категории
+ */
 
+function updateCategoryData($itemId, $parentId = -1, $newName = ''){
+
+  $set = array();
+
+  if($newName){
+    $set[] = "`name` = '{$newName}'";
+  }
+
+  if($parentId > -1){
+     $set[] = "`parent_id` = '{$parentId}'";
+  }
+
+  $setStr = implode($set, ", ");
+  $sql = "UPDATE categorie
+    SET {$setStr}
+    WHERE id = '{$itemId}'";
+
+  $rs = mysql_query($sql);
+  return $rs;
+
+}
 
