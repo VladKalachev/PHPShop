@@ -27,3 +27,24 @@
 	loadTemplate($smarty, 'adminFooter');
 
  }
+
+ function addnewcatAction(){
+
+ 	$catName = $_POST['newCategoryName'];
+ 	$catParentId = $_POST['generalCartId'];
+
+ 	$res = insertCat($catName, $catParentId);
+
+ 	if($res){
+ 		$resData['success'] = 1;
+ 		$resData['message'] = 'Категория добавлена';
+ 	}else {
+		$resData['success'] = 0;
+ 		$resData['message'] = 'Ошибка добавления категории';
+ 	}
+
+ 	echo json_encode($resData);
+
+ 	return;
+
+ }

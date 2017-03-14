@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-13 14:57:04
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-14 14:08:30
          compiled from "../views/admin/adminHeader.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:58242764758c6a44758ae88-81972429%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e3e73db88c29c16937b1faf309b36a10618991bc' => 
     array (
       0 => '../views/admin/adminHeader.tpl',
-      1 => 1489413418,
+      1 => 1489496906,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
 css/main.css">
 		<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-		
+		<script src="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
+js/admin.js" type="text/javascript"></script>
 
     </head>
 <body>

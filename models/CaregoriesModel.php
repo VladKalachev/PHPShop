@@ -79,9 +79,33 @@ function getChildrenForCat($catId){
     $sql = "SELECT * 
         FROM categorie 
         WHERE parent_id = 0";
-    
+
     $rs = mysql_query($sql);
-   
     return createSmartyRsArray($rs);
 
  }
+
+/**
+ * Добавление новой категории
+ * 
+ */
+
+function insertCat($catName, $catParentId = 0)
+{
+
+    $sql = "INSERT INTO
+    categorie (`parent_id`, `name`)
+    VALUES ('{$catParentId}', '{$catName}')";
+    
+    // выполнить запрос
+    mysql_query($sql);
+
+    // получаем id добавленно записи
+    $id = mysql_insert_id();
+   
+    return $id;  
+
+}
+
+
+

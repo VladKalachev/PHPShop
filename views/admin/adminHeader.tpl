@@ -5,7 +5,7 @@
         <title>{$pageTitle}</title>
         <link rel="stylesheet" type="text/css" href="{$teplateWebPath}css/main.css">
 		<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-		{* <script src="{$teplateWebPath}js/admin.js" type="text/javascript"></script> *}
+		<script src="{$teplateWebPath}js/admin.js" type="text/javascript"></script>
 
     </head>
 <body>
