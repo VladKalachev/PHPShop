@@ -108,4 +108,21 @@ function insertCat($catName, $catParentId = 0)
 }
 
 
+/**
+ * Получить все категории
+ */
+
+function getAllCategories(){
+
+  $sql = "SELECT *
+  FROM categorie 
+  ORDER BY parent_id ASC";
+
+  $rs = mysql_query($sql);
+   
+  return createSmartyRsArray($rs);
+
+}
+
+
 

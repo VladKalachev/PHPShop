@@ -48,3 +48,21 @@
  	return;
 
  }
+
+ /**
+  *  Страница управления категориями
+  */
+ function categoryAction($smarty)
+ {
+ 	$rsCategories = getAllCategories();
+ 	$rsMainCategories = getAllMainCategories();
+
+ 	$smarty->assign('rsCategories', $rsCategories);
+ 	$smarty->assign('rsMainCategories', $rsMainCategories);
+ 	$smarty->assign('pageTitle', 'Управление сайтом');
+
+
+ 	loadTemplate($smarty, 'adminHeader');
+	loadTemplate($smarty, 'adminCategory');
+	loadTemplate($smarty, 'adminFooter');
+ }
