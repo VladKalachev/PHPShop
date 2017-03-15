@@ -19,12 +19,12 @@
 				<td><a href="#" onclick="showProducts('{$item['id']}'); return false;">Показать товар заказа</a></td>
 				<td>{$item['id']}</td>
 				<td>
-					<input type="checkbox" id="itemStatus_{$item['id']}" {if $item['status'] } checked="checked" {/if} onclick="updateOrderStatus('{$item['id']}')">
+					<input type="checkbox" id="itemStatus_{$item['id']}" {if $item['status'] } checked="checked" {/if} onclick="updateOrderStatus('{$item['id']}')">Закрыть
 				</td>
 				<td>{$item['date_created']}</td>
 				<td>
 					<input type="text" id="datePayment_{$item['id']}" value="{$item['date_payment']}">
-					<input type="button" value="Сохранить" onclick="updateDatePayment('{$item['id']}';">
+					<input type="button" value="Сохранить" onclick="updateDatePayment('{$item['id']}');">
 				</td>
 				<td>{$item['comment']}</td>
 				<td>{$item['date_modification']}</td>

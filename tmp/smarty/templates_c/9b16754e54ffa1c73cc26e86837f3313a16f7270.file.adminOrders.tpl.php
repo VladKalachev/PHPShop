@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-15 13:41:35
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-15 14:22:15
          compiled from "../views/admin/adminOrders.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:50554871958c9367f84e764-87919223%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9b16754e54ffa1c73cc26e86837f3313a16f7270' => 
     array (
       0 => '../views/admin/adminOrders.tpl',
-      1 => 1489581445,
+      1 => 1489584133,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1-DEV',
+  'unifunc' => 'content_58c9367fc94130_89350921',
   'variables' => 
   array (
     'rsOrders' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'itemChild' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1-DEV',
-  'unifunc' => 'content_58c9367fc94130_89350921',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58c9367fc94130_89350921')) {function content_58c9367fc94130_89350921($_smarty_tpl) {?><h2>Заказы</h2>
 <?php if (!$_smarty_tpl->tpl_vars['rsOrders']->value){?>
@@ -57,7 +57,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 				<td>
 					<input type="checkbox" id="itemStatus_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " <?php if ($_smarty_tpl->tpl_vars['item']->value['status']){?> checked="checked" <?php }?> onclick="updateOrderStatus('<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-')">
+')">Закрыть
 				</td>
 				<td><?php echo $_smarty_tpl->tpl_vars['item']->value['date_created'];?>
 </td>
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 " value="<?php echo $_smarty_tpl->tpl_vars['item']->value['date_payment'];?>
 ">
 					<input type="button" value="Сохранить" onclick="updateDatePayment('<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-';">
+');">
 				</td>
 				<td><?php echo $_smarty_tpl->tpl_vars['item']->value['comment'];?>
 </td>

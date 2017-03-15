@@ -125,7 +125,31 @@ function getProductsForOrder($orderId)
 	LEFT JOIN products AS ps 
 	ON pe.product_id = ps.id
 	WHERE (`order_id` = '{$orderId}')";
-	
+
 	$rs = mysql_query($sql);
 	return createSmartyRsArray($rs);
+}
+
+
+function updateOrderStatus($itemId, $status)
+{
+	$status = intval($status);
+
+	$sql = "UPDATE orders 
+	SET `status` = '{$status}' 
+	WHERE id = '{$itemId}'";
+
+	$rs = mysql_query($sql);
+	return $rs;
+
+}
+
+function updateOrderDatePayment($itemId, $datePayment)
+{
+	$sql = "UPDATE orders 
+	SET `date_payment` = '{$datePayment}' 
+	WHERE id = '{$itemId}'";
+
+	$rs = mysql_query($sql);
+	return $rs;
 }
