@@ -72,7 +72,7 @@
 			</td>
 
 			<td>
-				<textarea id="itemDesc_{$tem['id']}" ">
+				<textarea id="itemDesc_{$item['id']}">
 					{$item['description']}
 				</textarea>
 			</td>

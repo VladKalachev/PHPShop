@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-14 17:24:49
+<?php /* Smarty version Smarty-3.1-DEV, created on 2017-03-15 11:09:45
          compiled from "../views/admin/adminProducts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:40563266358c809113f7a48-73683316%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '10789b7007e594d7d98cbb9887351864bcf43087' => 
     array (
       0 => '../views/admin/adminProducts.tpl',
-      1 => 1489508676,
+      1 => 1489572581,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'itemCat' => 0,
     'rsProducts' => 0,
     'item' => 0,
-    'tem' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -126,8 +125,8 @@ $_smarty_tpl->tpl_vars['itemCat']->_loop = true;
 			</td>
 
 			<td>
-				<textarea id="itemDesc_<?php echo $_smarty_tpl->tpl_vars['tem']->value['id'];?>
-" ">
+				<textarea id="itemDesc_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+">
 					<?php echo $_smarty_tpl->tpl_vars['item']->value['description'];?>
 
 				</textarea>
