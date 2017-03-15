@@ -156,3 +156,38 @@ function updateproductAction()
  	return;
 
 }
+
+function uploadAction()
+{
+
+	$maxSize = 2 * 1024 * 1024;
+
+	$itemId = $_POST['itemId'];
+	// получаем расширение загружаемого файла
+	$ext = pathinfo($_FILES['filename']['name'], PATHINFO_EXTENSION);
+	// создаем имя файла
+	$newFileNeme = $itemId . '.' . $ext;
+
+	if($_FILES['filename']['size'] > $maxSize){
+		echo("Размер файла привышает два мегабайта");
+		return;
+	}
+
+	// Загружен ли файл
+	if(is_uploaded_file($_FILES['filename']['tmp_name'])){
+
+		//Если файл загружен то перемещяем его из временной дериктории в конечнную
+		
+		$res = move_uploaded_file($_FILES['filename']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/images/products/'. $newFileNeme);
+		if($res){
+			$res = uploadProductImage($itemId, $newFileNeme);
+			if($res){
+				redirect('/');
+			}
+		} 
+
+	} else {
+			echo ("Ошибка загрузки файла");
+		}
+
+}

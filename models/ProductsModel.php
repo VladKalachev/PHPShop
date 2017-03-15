@@ -167,3 +167,12 @@ function updateProduct($itemId, $itemName, $itemPrice, $itemStatus, $itemDesc, $
   return $rs;
 
 }
+
+
+function uploadProductImage($itemId, $newFileNeme){
+
+  $rs = updateProduct($itemId, null, null, null, null, null, $newFileNeme);
+
+  return $rs;
+
+}
