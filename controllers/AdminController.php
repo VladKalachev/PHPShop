@@ -191,3 +191,21 @@ function uploadAction()
 		}
 
 }
+
+/**
+ * Экшен для страницы заказов
+ */
+
+function ordersAction($smarty)
+{
+	$rsOrders = getOrders();
+	
+	$smarty->assign('rsOrders', $rsOrders);
+ 	$smarty->assign('pageTitle', 'Заказы');
+
+
+ 	loadTemplate($smarty, 'adminHeader');
+	loadTemplate($smarty, 'adminOrders');
+	loadTemplate($smarty, 'adminFooter');
+
+}
